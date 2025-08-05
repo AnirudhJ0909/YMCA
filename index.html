@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YMCA of Central Florida - Demo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    header {
+      background-color: #002855;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background-image: url('https://ymcacf.org/wp-content/uploads/2022/03/hero-1.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1.5rem 2.5rem;
+      font-size: 2.5rem;
+      max-width: 80%;
+      border-radius: 8px;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #002855;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .cta {
+      background-color: #ffcc00;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .cta h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #002855;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .cta a:hover {
+      background-color: #004080;
+    }
+
+    footer {
+      background-color: #002855;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header, nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        display: block;
+        margin: 0.5rem 0 0 0;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">YMCA of Central Florida</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Join</a>
+      <a href="#">Programs</a>
+      <a href="#">Locations</a>
+      <a href="#">Give</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Strengthening the Foundations of Our Community</h1>
+  </div>
+
+  <div class="section">
+    <h2>Welcome to the Y</h2>
+    <p>
+      The YMCA of Central Florida is a nonprofit organization dedicated to strengthening communities through youth development, healthy living, and social responsibility. We're here to help everyone reach their full potential.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Our Programs</h2>
+    <p>
+      From swimming and sports to group exercise and family events, the Y offers a wide range of programs to support individuals and families of all ages and abilities.
+    </p>
+  </div>
+
+  <div class="cta">
+    <h3>Ready to Join the Y?</h3>
+    <p>Become a part of something greater today.</p>
+    <a href="#">Join Now</a>
+  </div>
+
+  <footer>
+    &copy; 2025 YMCA of Central Florida – Demo Website. All rights reserved.
+  </footer>
+
+  <!-- 🔽 Add your chatbot script below this line -->
+  <!-- Example:
+  <script src="https://wotnot.io/widget/script.js" data-bot-id="YOUR-BOT-ID"></script>
+  -->
+
+</body>
+</html>
