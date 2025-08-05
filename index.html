@@ -11,6 +11,7 @@
       --yellow: #ffcc00;
       --gray: #f5f5f5;
       --white: #ffffff;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     * {
@@ -26,7 +27,6 @@
       line-height: 1.6;
     }
 
-    /* Header */
     header {
       background: linear-gradient(to right, var(--blue), var(--light-blue));
       padding: 1.2rem 2rem;
@@ -34,7 +34,7 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow);
     }
 
     .logo {
@@ -67,7 +67,6 @@
       width: 100%;
     }
 
-    /* Hero */
     .hero {
       background: url('https://ymcacf.org/wp-content/uploads/2022/03/hero-1.jpg') center/cover no-repeat;
       height: 500px;
@@ -86,27 +85,57 @@
       text-shadow: 2px 2px 4px #000;
     }
 
-    /* Section */
     .section {
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
       background-color: var(--white);
       text-align: center;
     }
 
     .section h2 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: var(--blue);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .section p {
-      font-size: 1.1rem;
-      max-width: 800px;
-      margin: 0 auto;
-      color: #555;
+      font-size: 1.15rem;
+      max-width: 900px;
+      margin: 0 auto 2rem;
+      color: #444;
     }
 
-    /* Cards */
+    .highlight-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .highlight {
+      flex: 1 1 280px;
+      background-color: var(--light-blue);
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+
+    .highlight:hover {
+      transform: translateY(-5px);
+    }
+
+    .highlight h4 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight p {
+      font-size: 0.95rem;
+      color: #e0e0e0;
+    }
+
     .cards {
       display: flex;
       justify-content: center;
@@ -120,13 +149,13 @@
       width: 300px;
       padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow);
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
     }
 
     .card h3 {
@@ -138,16 +167,15 @@
       font-size: 0.95rem;
     }
 
-    /* CTA */
     .cta {
       background: var(--yellow);
       color: #000;
-      padding: 2.5rem 1rem;
+      padding: 3rem 1rem;
       text-align: center;
     }
 
     .cta h3 {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
 
     .cta a {
@@ -166,7 +194,6 @@
       background: #004080;
     }
 
-    /* Footer */
     footer {
       background-color: var(--blue);
       color: white;
@@ -185,7 +212,7 @@
         margin: 0.5rem 0;
       }
 
-      .cards {
+      .cards, .highlight-box {
         flex-direction: column;
         align-items: center;
       }
@@ -197,7 +224,6 @@
   </style>
 </head>
 <body>
-
   <header>
     <div class="logo">YMCA Central Florida</div>
     <nav>
@@ -216,6 +242,20 @@
   <section class="section">
     <h2>Welcome to the Y</h2>
     <p>The YMCA of Central Florida is more than just a gym — we're a community committed to healthy living, youth development, and social responsibility.</p>
+    <div class="highlight-box">
+      <div class="highlight">
+        <h4>Trusted Since 1885</h4>
+        <p>We’ve been serving families for generations with integrity and care.</p>
+      </div>
+      <div class="highlight">
+        <h4>Over 20+ Locations</h4>
+        <p>Accessible facilities across Central Florida to support every neighborhood.</p>
+      </div>
+      <div class="highlight">
+        <h4>Inclusive for All</h4>
+        <p>Scholarships and support programs ensure no one is turned away.</p>
+      </div>
+    </div>
   </section>
 
   <section class="section">
@@ -250,7 +290,7 @@
   <!-- Example:
   <script src="https://wotnot.io/widget/script.js" data-bot-id="YOUR-BOT-ID"></script>
   -->
-
 </body>
 </html>
+
 
