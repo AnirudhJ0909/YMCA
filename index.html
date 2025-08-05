@@ -34,11 +34,12 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .logo {
       color: var(--white);
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: bold;
     }
 
@@ -47,75 +48,90 @@
       text-decoration: none;
       margin-left: 1.5rem;
       font-weight: 500;
+      position: relative;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--yellow);
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
     }
 
-    /* Hero Section */
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
     .hero {
       background: url('https://ymcacf.org/wp-content/uploads/2022/03/hero-1.jpg') center/cover no-repeat;
-      height: 450px;
+      height: 500px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      text-align: center;
       position: relative;
     }
 
     .hero h1 {
       background-color: rgba(0, 0, 0, 0.6);
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-size: 2.5rem;
+      padding: 1.5rem 2.5rem;
+      border-radius: 10px;
+      color: white;
+      font-size: 2.8rem;
+      text-shadow: 2px 2px 4px #000;
     }
 
     /* Section */
     .section {
       padding: 3rem 2rem;
-      text-align: center;
       background-color: var(--white);
+      text-align: center;
     }
 
     .section h2 {
+      font-size: 2.2rem;
       color: var(--blue);
-      font-size: 2rem;
       margin-bottom: 1rem;
     }
 
     .section p {
+      font-size: 1.1rem;
       max-width: 800px;
       margin: 0 auto;
-      font-size: 1.1rem;
+      color: #555;
     }
 
-    /* Cards Section */
+    /* Cards */
     .cards {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
+      flex-wrap: wrap;
       margin-top: 2rem;
     }
 
     .card {
       background-color: var(--gray);
-      border-radius: 10px;
-      padding: 1.5rem;
       width: 300px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
     }
 
     .card h3 {
       color: var(--light-blue);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .card p {
@@ -124,30 +140,30 @@
 
     /* CTA */
     .cta {
-      background-color: var(--yellow);
-      color: black;
+      background: var(--yellow);
+      color: #000;
       padding: 2.5rem 1rem;
       text-align: center;
     }
 
     .cta h3 {
       font-size: 2rem;
-      margin-bottom: 0.5rem;
     }
 
     .cta a {
-      display: inline-block;
       margin-top: 1rem;
-      background-color: var(--blue);
+      display: inline-block;
+      background: var(--blue);
       color: white;
-      padding: 0.8rem 1.5rem;
+      padding: 0.9rem 1.8rem;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: bold;
+      transition: background 0.3s ease;
     }
 
     .cta a:hover {
-      background-color: #004080;
+      background: #004080;
     }
 
     /* Footer */
@@ -155,11 +171,10 @@
       background-color: var(--blue);
       color: white;
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
+      padding: 1.2rem;
+      font-size: 0.95rem;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       header, nav {
         flex-direction: column;
@@ -167,76 +182,68 @@
       }
 
       nav a {
-        margin: 0.5rem 0 0;
-      }
-
-      .hero h1 {
-        font-size: 1.6rem;
+        margin: 0.5rem 0;
       }
 
       .cards {
         flex-direction: column;
         align-items: center;
       }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <div class="logo">YMCA of Central Florida</div>
+    <div class="logo">YMCA Central Florida</div>
     <nav>
       <a href="#">Home</a>
       <a href="#">Programs</a>
-      <a href="#">Membership</a>
       <a href="#">Locations</a>
+      <a href="#">Membership</a>
       <a href="#">Donate</a>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <div class="hero">
-    <h1>Empowering Youth. Improving Health. Inspiring Action.</h1>
-  </div>
+  <section class="hero">
+    <h1>Empowering Youth, Families & Communities</h1>
+  </section>
 
-  <!-- About Section -->
-  <div class="section">
+  <section class="section">
     <h2>Welcome to the Y</h2>
-    <p>
-      At the YMCA of Central Florida, we're committed to strengthening communities through youth development, healthy living, and social responsibility. Join a movement that builds brighter futures.
-    </p>
-  </div>
+    <p>The YMCA of Central Florida is more than just a gym — we're a community committed to healthy living, youth development, and social responsibility.</p>
+  </section>
 
-  <!-- Programs Section -->
-  <div class="section">
+  <section class="section">
     <h2>Our Core Programs</h2>
     <div class="cards">
       <div class="card">
-        <h3>Health & Fitness</h3>
-        <p>Group exercise, personal training, and wellness programs to help you live healthier.</p>
+        <h3>Health & Wellness</h3>
+        <p>State-of-the-art fitness centers, group exercise, personal training, and nutrition support for all ages.</p>
       </div>
       <div class="card">
-        <h3>Youth Development</h3>
-        <p>Summer camps, child care, swim lessons, and after-school activities for kids of all ages.</p>
+        <h3>Child Care & Camps</h3>
+        <p>Safe, engaging environments for kids to learn, grow, and thrive through after-school care and summer camps.</p>
       </div>
       <div class="card">
-        <h3>Community Outreach</h3>
-        <p>Support, inclusion, and access to programs that uplift every corner of our community.</p>
+        <h3>Community Support</h3>
+        <p>Inclusive programs and scholarships that ensure every family has access to the Y's resources.</p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- CTA -->
-  <div class="cta">
-    <h3>Ready to Join the Y?</h3>
-    <p>Become part of something greater today.</p>
-    <a href="#">Get Started</a>
-  </div>
+  <section class="cta">
+    <h3>Ready to Make a Difference?</h3>
+    <p>Join the YMCA today and become part of something greater.</p>
+    <a href="#">Join Now</a>
+  </section>
 
-  <!-- Footer -->
   <footer>
-    &copy; 2025 YMCA of Central Florida – Demo Page. All rights reserved.
+    &copy; 2025 YMCA of Central Florida — Demo Page for Chatbot Integration
   </footer>
 
   <!-- 🔽 Add your chatbot script below this line -->
