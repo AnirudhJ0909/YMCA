@@ -3,17 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>YMCA of Central Florida - Demo</title>
+  <title>ReplyCX - Smarter Conversations</title>
   <style>
-    :root {
-      --blue: #002855;
-      --light-blue: #0072ce;
-      --yellow: #ffcc00;
-      --gray: #f5f5f5;
-      --white: #ffffff;
-      --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
-
+    /* Basic Reset */
     * {
       margin: 0;
       padding: 0;
@@ -21,276 +13,286 @@
     }
 
     body {
-      font-family: "Segoe UI", sans-serif;
-      background-color: var(--gray);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafc;
       color: #333;
       line-height: 1.6;
     }
 
+    /* Header */
     header {
-      background: linear-gradient(to right, var(--blue), var(--light-blue));
-      padding: 1.2rem 2rem;
+      background-color: #1e1e2f;
+      padding: 20px 50px;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      box-shadow: var(--shadow);
     }
 
     .logo {
-      color: var(--white);
-      font-size: 2rem;
+      font-size: 24px;
       font-weight: bold;
+      color: #00ffc3;
     }
 
     nav a {
-      color: var(--white);
+      color: #fff;
       text-decoration: none;
-      margin-left: 1.5rem;
+      margin-left: 20px;
       font-weight: 500;
-      position: relative;
+      transition: color 0.3s;
     }
 
-    nav a::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background: var(--yellow);
-      transition: width 0.3s;
-      position: absolute;
-      bottom: -4px;
-      left: 0;
+    nav a:hover {
+      color: #00ffc3;
     }
 
-    nav a:hover::after {
-      width: 100%;
-    }
-
+    /* Hero Section */
     .hero {
-      background: url('https://ymcacf.org/wp-content/uploads/2022/03/hero-1.jpg') center/cover no-repeat;
-      height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+      background: linear-gradient(to right, #00d2ff, #3a47d5);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
     }
 
     .hero h1 {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 1.5rem 2.5rem;
-      border-radius: 10px;
-      color: white;
-      font-size: 2.8rem;
-      text-shadow: 2px 2px 4px #000;
+      font-size: 48px;
+      margin-bottom: 20px;
     }
 
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+    }
+
+    .hero button {
+      padding: 14px 30px;
+      background: #fff;
+      color: #3a47d5;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .hero button:hover {
+      background: #00ffc3;
+      color: #1e1e2f;
+    }
+
+    /* Features Section */
     .section {
-      padding: 4rem 2rem;
-      background-color: var(--white);
+      padding: 80px 50px;
       text-align: center;
     }
 
     .section h2 {
-      font-size: 2.5rem;
-      color: var(--blue);
-      margin-bottom: 1.5rem;
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #1e1e2f;
     }
 
-    .section p {
-      font-size: 1.15rem;
-      max-width: 900px;
-      margin: 0 auto 2rem;
-      color: #444;
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
     }
 
-    .highlight-box {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .highlight {
-      flex: 1 1 280px;
-      background-color: var(--light-blue);
-      color: white;
-      padding: 2rem;
+    .feature-box {
+      background: white;
+      padding: 30px;
       border-radius: 12px;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
     }
 
-    .highlight:hover {
-      transform: translateY(-5px);
+    .feature-box:hover {
+      transform: translateY(-10px);
     }
 
-    .highlight h4 {
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
+    .feature-box h3 {
+      color: #3a47d5;
+      margin-bottom: 10px;
     }
 
-    .highlight p {
-      font-size: 0.95rem;
-      color: #e0e0e0;
+    /* Use Cases */
+    .usecases {
+      background-color: #eef1f7;
+      padding: 60px 50px;
     }
 
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
+    .usecases h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #333;
     }
 
-    .card {
-      background-color: var(--gray);
-      width: 300px;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s, box-shadow 0.3s;
+    .usecases ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    .usecases li {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
 
-    .card h3 {
-      color: var(--light-blue);
-      margin-bottom: 0.75rem;
+    /* Testimonials */
+    .testimonials {
+      background: #fff;
+      padding: 60px 50px;
     }
 
-    .card p {
-      font-size: 0.95rem;
+    .testimonial {
+      font-style: italic;
+      margin: 20px auto;
+      max-width: 600px;
     }
 
-    .cta {
-      background: var(--yellow);
-      color: #000;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-
-    .cta h3 {
-      font-size: 2.2rem;
-    }
-
-    .cta a {
-      margin-top: 1rem;
-      display: inline-block;
-      background: var(--blue);
-      color: white;
-      padding: 0.9rem 1.8rem;
-      text-decoration: none;
-      border-radius: 8px;
+    .testimonial span {
+      display: block;
+      margin-top: 10px;
       font-weight: bold;
-      transition: background 0.3s ease;
+      color: #3a47d5;
     }
 
-    .cta a:hover {
-      background: #004080;
-    }
-
-    footer {
-      background-color: var(--blue);
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(to right, #3a47d5, #00d2ff);
       color: white;
+      padding: 60px 30px;
       text-align: center;
-      padding: 1.2rem;
-      font-size: 0.95rem;
     }
 
-    @media (max-width: 768px) {
-      header, nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
 
-      nav a {
-        margin: 0.5rem 0;
-      }
+    .cta button {
+      background: #fff;
+      color: #3a47d5;
+      padding: 14px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
 
-      .cards, .highlight-box {
-        flex-direction: column;
-        align-items: center;
-      }
+    .cta button:hover {
+      background: #00ffc3;
+      color: #1e1e2f;
+    }
 
-      .hero h1 {
-        font-size: 2rem;
-      }
+    /* Footer */
+    footer {
+      background: #1e1e2f;
+      color: white;
+      padding: 30px 50px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #00ffc3;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="logo">YMCA Central Florida</div>
+    <div class="logo">ReplyCX</div>
     <nav>
       <a href="#">Home</a>
-      <a href="#">Programs</a>
-      <a href="#">Locations</a>
-      <a href="#">Membership</a>
-      <a href="#">Donate</a>
+      <a href="#">Features</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Empowering Youth, Families & Communities</h1>
+    <h1>Smarter Conversations, Better Customer Experience</h1>
+    <p>ReplyCX empowers your business with AI-powered chat, omnichannel automation, and seamless integrations to drive customer engagement like never before.</p>
+    <button>Get Started Free</button>
   </section>
 
   <section class="section">
-    <h2>Welcome to the Y</h2>
-    <p>The YMCA of Central Florida is more than just a gym — we're a community committed to healthy living, youth development, and social responsibility.</p>
-    <div class="highlight-box">
-      <div class="highlight">
-        <h4>Trusted Since 1885</h4>
-        <p>We’ve been serving families for generations with integrity and care.</p>
+    <h2>Why Choose ReplyCX?</h2>
+    <div class="features">
+      <div class="feature-box">
+        <h3>Omnichannel Messaging</h3>
+        <p>Connect with customers across WhatsApp, SMS, Email, API & more — all from one place.</p>
       </div>
-      <div class="highlight">
-        <h4>Over 20+ Locations</h4>
-        <p>Accessible facilities across Central Florida to support every neighborhood.</p>
+      <div class="feature-box">
+        <h3>Bot + Human Support</h3>
+        <p>Automate with smart bots, and transfer to agents instantly when needed.</p>
       </div>
-      <div class="highlight">
-        <h4>Inclusive for All</h4>
-        <p>Scholarships and support programs ensure no one is turned away.</p>
+      <div class="feature-box">
+        <h3>Drag & Drop Builder</h3>
+        <p>Create conversational journeys effortlessly without writing a single line of code.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Real-time Analytics</h3>
+        <p>Track engagement, measure performance, and optimize with powerful dashboards.</p>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>Our Core Programs</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Health & Wellness</h3>
-        <p>State-of-the-art fitness centers, group exercise, personal training, and nutrition support for all ages.</p>
-      </div>
-      <div class="card">
-        <h3>Child Care & Camps</h3>
-        <p>Safe, engaging environments for kids to learn, grow, and thrive through after-school care and summer camps.</p>
-      </div>
-      <div class="card">
-        <h3>Community Support</h3>
-        <p>Inclusive programs and scholarships that ensure every family has access to the Y's resources.</p>
-      </div>
+  <section class="usecases">
+    <h2 style="text-align: center;">Top Use Cases</h2>
+    <ul>
+      <li>
+        <h3>Lead Generation</h3>
+        <p>Capture and qualify leads automatically via messaging apps.</p>
+      </li>
+      <li>
+        <h3>Appointment Booking</h3>
+        <p>Send dynamic QR codes and reminders through WhatsApp.</p>
+      </li>
+      <li>
+        <h3>Order Tracking</h3>
+        <p>Integrate with your system to send real-time order updates to users.</p>
+      </li>
+      <li>
+        <h3>Customer Support</h3>
+        <p>Provide 24/7 assistance with FAQ bots and live agent routing.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="testimonials">
+    <h2 style="text-align: center;">What Our Users Say</h2>
+    <div class="testimonial">
+      “ReplyCX helped us reduce our customer response time by 80%! It’s a game changer.”
+      <span>- Sarah T., E-commerce Manager</span>
+    </div>
+    <div class="testimonial">
+      “We built and deployed a WhatsApp bot in under a day. Super easy and powerful.”
+      <span>- Rajesh K., Marketing Lead</span>
     </div>
   </section>
 
   <section class="cta">
-    <h3>Ready to Make a Difference?</h3>
-    <p>Join the YMCA today and become part of something greater.</p>
-    <a href="#">Join Now</a>
+    <h2>Start Engaging Smarter Today</h2>
+    <button>Try ReplyCX Now</button>
   </section>
 
   <footer>
-    &copy; 2025 YMCA of Central Florida — Demo Page for Chatbot Integration
+    &copy; 2025 ReplyCX. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a>
   </footer>
 
-  <!-- 🔽 Add your chatbot script below this line -->
-  <!-- Example:
-  <script src="https://wotnot.io/widget/script.js" data-bot-id="YOUR-BOT-ID"></script>
-  -->
 </body>
 </html>
-
 
