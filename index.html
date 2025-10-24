@@ -2,302 +2,227 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ReplyCX - Smarter Conversations</title>
-  <style>
-    /* Basic Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9fafc;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* Header */
-    header {
-      background-color: #1e1e2f;
-      padding: 20px 50px;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #00ffc3;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #00ffc3;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(to right, #00d2ff, #3a47d5);
-      color: white;
-      padding: 100px 20px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 700px;
-      margin: 0 auto 30px auto;
-    }
-
-    .hero button {
-      padding: 14px 30px;
-      background: #fff;
-      color: #3a47d5;
-      font-weight: bold;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: all 0.3s;
-    }
-
-    .hero button:hover {
-      background: #00ffc3;
-      color: #1e1e2f;
-    }
-
-    /* Features Section */
-    .section {
-      padding: 80px 50px;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #1e1e2f;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .feature-box {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-    }
-
-    .feature-box:hover {
-      transform: translateY(-10px);
-    }
-
-    .feature-box h3 {
-      color: #3a47d5;
-      margin-bottom: 10px;
-    }
-
-    /* Use Cases */
-    .usecases {
-      background-color: #eef1f7;
-      padding: 60px 50px;
-    }
-
-    .usecases h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    .usecases ul {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .usecases li {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-    }
-
-    /* Testimonials */
-    .testimonials {
-      background: #fff;
-      padding: 60px 50px;
-    }
-
-    .testimonial {
-      font-style: italic;
-      margin: 20px auto;
-      max-width: 600px;
-    }
-
-    .testimonial span {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-      color: #3a47d5;
-    }
-
-    /* CTA Section */
-    .cta {
-      background: linear-gradient(to right, #3a47d5, #00d2ff);
-      color: white;
-      padding: 60px 30px;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    .cta button {
-      background: #fff;
-      color: #3a47d5;
-      padding: 14px 30px;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .cta button:hover {
-      background: #00ffc3;
-      color: #1e1e2f;
-    }
-
-    /* Footer */
-    footer {
-      background: #1e1e2f;
-      color: white;
-      padding: 30px 50px;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: #00ffc3;
-      text-decoration: none;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<script src="https://app.reply.cx/chat-widget/6M7bW3f8CngH072703062137xJI2dDEN.js" defer></script>
-  <header>
-    <div class="logo">ReplyCX</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Features</a>
-      <a href="#">Pricing</a>
-      <a href="#">Contact</a>
-    </nav>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark">¢</span>
+      <h1>Expense Tracker</h1>
+    </div>
+    <div class="header-actions">
+      <button id="open-settings-btn" class="btn btn-secondary">Settings</button>
+      <button id="manage-categories-btn" class="btn btn-secondary">Categories</button>
+      <div class="dropdown">
+        <button class="btn btn-secondary">Import/Export</button>
+        <div class="dropdown-menu">
+          <button id="export-json-btn" class="menu-item">Export JSON</button>
+          <button id="export-csv-btn" class="menu-item">Export CSV</button>
+          <button id="import-btn" class="menu-item">Import...</button>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>Smarter Conversations, Better Customer Experience</h1>
-    <p>ReplyCX empowers your business with AI-powered chat, omnichannel automation, and seamless integrations to drive customer engagement like never before.</p>
-    <button>Get Started Free</button>
-  </section>
+  <main class="container">
+    <section class="toolbar">
+      <div class="left">
+        <button id="add-expense-btn" class="btn btn-primary">Add Expense</button>
+      </div>
+      <div class="filters">
+        <label>
+          From
+          <input type="date" id="filter-from" />
+        </label>
+        <label>
+          To
+          <input type="date" id="filter-to" />
+        </label>
+        <label>
+          Category
+          <select id="filter-category">
+            <option value="all">All</option>
+          </select>
+        </label>
+        <label class="search">
+          Search
+          <input type="search" id="filter-search" placeholder="Description contains..." />
+        </label>
+        <label>
+          Sort
+          <select id="sort-select">
+            <option value="date_desc">Date ↓</option>
+            <option value="date_asc">Date ↑</option>
+            <option value="amount_desc">Amount ↓</option>
+            <option value="amount_asc">Amount ↑</option>
+          </select>
+        </label>
+        <button id="clear-filters-btn" class="btn btn-light">Clear</button>
+      </div>
+    </section>
 
-  <section class="section">
-    <h2>Why Choose ReplyCX?</h2>
-    <div class="features">
-      <div class="feature-box">
-        <h3>Omnichannel Messaging</h3>
-        <p>Connect with customers across WhatsApp, SMS, Email, API & more — all from one place.</p>
+    <section class="summary">
+      <div class="summary-card">
+        <div class="summary-title">Filtered Total</div>
+        <div id="summary-total" class="summary-value">$0.00</div>
       </div>
-      <div class="feature-box">
-        <h3>Bot + Human Support</h3>
-        <p>Automate with smart bots, and transfer to agents instantly when needed.</p>
+      <div class="summary-card budget-card">
+        <div class="summary-title">Month-to-date vs Budget</div>
+        <div class="progress">
+          <div id="budget-progress-bar" class="progress-bar" style="width: 0%"></div>
+        </div>
+        <div id="budget-progress-text" class="progress-text">$0 / $0</div>
       </div>
-      <div class="feature-box">
-        <h3>Drag & Drop Builder</h3>
-        <p>Create conversational journeys effortlessly without writing a single line of code.</p>
+      <div class="summary-card">
+        <div class="summary-title">This Month</div>
+        <div id="month-summary" class="summary-value">$0.00</div>
       </div>
-      <div class="feature-box">
-        <h3>Real-time Analytics</h3>
-        <p>Track engagement, measure performance, and optimize with powerful dashboards.</p>
+    </section>
+
+    <section class="list-section">
+      <table class="table" id="expenses-table" aria-label="Expenses">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th class="text-right">Amount</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="expenses-tbody">
+          <!-- rows injected by JS -->
+        </tbody>
+      </table>
+      <div id="empty-state" class="empty-state" hidden>
+        <p>No expenses found for the selected filters.</p>
+      </div>
+    </section>
+
+    <section class="charts">
+      <div class="chart-card">
+        <h3>By Category</h3>
+        <canvas id="categoryChart" height="220"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Last 12 Months</h3>
+        <canvas id="monthlyChart" height="220"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <!-- Expense Modal -->
+  <div id="expense-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="expense-modal-title" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="expense-modal-title">Add Expense</h2>
+        <button class="icon-btn" id="close-expense-modal" aria-label="Close">✕</button>
+      </div>
+      <form id="expense-form">
+        <input type="hidden" id="expense-id" />
+        <div class="form-row">
+          <label for="expense-date">Date</label>
+          <input type="date" id="expense-date" required />
+        </div>
+        <div class="form-row">
+          <label for="expense-amount">Amount</label>
+          <input type="number" id="expense-amount" step="0.01" min="0" required />
+        </div>
+        <div class="form-row">
+          <label for="expense-category">Category</label>
+          <select id="expense-category" required></select>
+        </div>
+        <div class="form-row">
+          <label for="expense-description">Description</label>
+          <input type="text" id="expense-description" maxlength="140" placeholder="Optional" />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-light" id="cancel-expense-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="save-expense-btn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Categories Modal -->
+  <div id="categories-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="categories-modal-title" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="categories-modal-title">Categories</h2>
+        <button class="icon-btn" id="close-categories-modal" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <ul id="categories-list" class="category-list"></ul>
+        <div class="add-category">
+          <input type="text" id="new-category-input" placeholder="New category name" />
+          <button id="add-category-btn" class="btn btn-secondary">Add</button>
+        </div>
+        <p class="muted">Note: "Other" cannot be renamed or deleted.</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="usecases">
-    <h2 style="text-align: center;">Top Use Cases</h2>
-    <ul>
-      <li>
-        <h3>Lead Generation</h3>
-        <p>Capture and qualify leads automatically via messaging apps.</p>
-      </li>
-      <li>
-        <h3>Appointment Booking</h3>
-        <p>Send dynamic QR codes and reminders through WhatsApp.</p>
-      </li>
-      <li>
-        <h3>Order Tracking</h3>
-        <p>Integrate with your system to send real-time order updates to users.</p>
-      </li>
-      <li>
-        <h3>Customer Support</h3>
-        <p>Provide 24/7 assistance with FAQ bots and live agent routing.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section class="testimonials">
-    <h2 style="text-align: center;">What Our Users Say</h2>
-    <div class="testimonial">
-      “ReplyCX helped us reduce our customer response time by 80%! It’s a game changer.”
-      <span>- Sarah T., E-commerce Manager</span>
+  <!-- Settings Modal -->
+  <div id="settings-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="settings-modal-title">Settings</h2>
+        <button class="icon-btn" id="close-settings-modal" aria-label="Close">✕</button>
+      </div>
+      <form id="settings-form">
+        <div class="form-row">
+          <label for="currency-symbol">Currency Symbol</label>
+          <input type="text" id="currency-symbol" maxlength="3" placeholder="$" />
+        </div>
+        <div class="form-row">
+          <label for="currency-position">Currency Position</label>
+          <select id="currency-position">
+            <option value="prefix">Prefix (e.g., $12.34)</option>
+            <option value="suffix">Suffix (e.g., 12.34 $)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="monthly-budget">Monthly Budget</label>
+          <input type="number" id="monthly-budget" min="0" step="0.01" placeholder="0 = disabled" />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-light" id="cancel-settings-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
     </div>
-    <div class="testimonial">
-      “We built and deployed a WhatsApp bot in under a day. Super easy and powerful.”
-      <span>- Rajesh K., Marketing Lead</span>
+  </div>
+
+  <!-- Import Modal -->
+  <div id="import-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="import-modal-title" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="import-modal-title">Import Data</h2>
+        <button class="icon-btn" id="close-import-modal" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <input type="file" id="import-file-input" accept=".json,.csv" />
+        <div class="form-row">
+          <label>Mode</label>
+          <div class="radio-group">
+            <label><input type="radio" name="import-mode" value="append" checked /> Append</label>
+            <label><input type="radio" name="import-mode" value="replace" /> Replace</label>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-light" id="cancel-import-btn">Cancel</button>
+          <button type="button" class="btn btn-primary" id="confirm-import-btn">Import</button>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <section class="cta">
-    <h2>Start Engaging Smarter Today</h2>
-    <button>Try ReplyCX Now</button>
-  </section>
-
-  <footer>
-    &copy; 2025 ReplyCX. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a>
-  </footer>
-
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script defer src="app.js"></script>
 </body>
 </html>
-
-
-
-
-
-
